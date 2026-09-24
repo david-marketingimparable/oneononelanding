@@ -1106,3 +1106,22 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
     height:2px !important;
   }
 }
+
+
+/* v40 — indicadores rojos más cortos y finos */
+.solution-text-only .solution-panel li::before{
+  width:32px !important;
+  height:2px !important;
+}
+@media (max-width:900px){
+  .solution-text-only .solution-panel li::before{
+    width:24px !important;
+    height:2px !important;
+  }
+}
+@media (max-width:600px){
+  .solution-text-only .solution-panel li::before{
+    width:20px !important;
+    height:2px !important;
+  }
+}
