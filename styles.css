@@ -297,7 +297,7 @@ body.thank-you-mode .thank-you-page{display:block}
 .solution-text-only .solution-panel h2{max-width:1000px}
 .solution-text-only .solution-panel ul{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;margin-top:42px}
 .solution-text-only .solution-panel li{padding:21px 0;border-top:1px solid #dfe2e7;font-size:17px;color:#3f4956}
-.solution-text-only .solution-panel li::before{content:'—';color:var(--red);font-weight:700;margin-right:14px}
+.solution-text-only .solution-panel li::before{content:'';display:inline-block;width:18px;height:2px;background:var(--red);vertical-align:middle;margin-right:14px;}
 .solution-text-only .solution-cta-wrap{margin-top:36px}
 
 /* v18 — fit section: intentionally text-only, no photograph */
