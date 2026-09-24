@@ -1125,3 +1125,45 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
     height:2px !important;
   }
 }
+
+
+/* v41 — márgenes móviles: evitar texto pegado a los bordes */
+@media (max-width:600px){
+  .container{
+    width:calc(100% - 48px) !important;
+  }
+
+  .hero-program-message{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .solution-text-only .solution-panel{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .solution-text-only .solution-panel h2{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .solution-text-only .solution-panel li{
+    padding-left:30px !important;
+    padding-right:0 !important;
+  }
+
+  .solution-text-only .solution-panel li::before{
+    left:0 !important;
+  }
+
+  .steps{
+    width:100%;
+  }
+}
+
+@media (max-width:390px){
+  .container{
+    width:calc(100% - 40px) !important;
+  }
+}
