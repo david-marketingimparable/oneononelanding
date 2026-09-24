@@ -942,3 +942,81 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   background: var(--red) !important;
   transform: translateY(-50%) !important;
 }
+
+
+/* v38 — bullets simétricos con divisor central y adaptación móvil */
+.solution-text-only .solution-panel ul{
+  position:relative;
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  grid-auto-flow:row;
+  column-gap:56px;
+  row-gap:0;
+  border:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+.solution-text-only .solution-panel ul::before{
+  content:'';
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:calc(50% - 28px);
+  width:1px;
+  background:#dfe2e7;
+  pointer-events:none;
+}
+.solution-text-only .solution-panel li{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:62px;
+  padding:18px 0 18px 24px !important;
+  border:0 !important;
+  font-size:17px;
+  line-height:1.35;
+  color:#3f4956;
+}
+.solution-text-only .solution-panel li::before{
+  content:'' !important;
+  position:absolute !important;
+  left:0 !important;
+  top:50% !important;
+  width:12px !important;
+  height:2px !important;
+  margin:0 !important;
+  border-radius:0 !important;
+  background:var(--red) !important;
+  transform:translateY(-50%) !important;
+}
+
+/* En móvil: una sola columna, sin divisor central */
+@media (max-width:900px){
+  .solution-text-only .solution-panel ul{
+    grid-template-columns:1fr !important;
+    column-gap:0 !important;
+  }
+  .solution-text-only .solution-panel ul::before{
+    display:none;
+  }
+  .solution-text-only .solution-panel li{
+    min-height:0;
+    padding:17px 0 17px 22px !important;
+    font-size:16px;
+  }
+  .solution-text-only .solution-panel li::before{
+    width:11px !important;
+  }
+}
+
+@media (max-width:600px){
+  .solution-text-only .solution-panel li{
+    padding:15px 0 15px 20px !important;
+    font-size:15px;
+    line-height:1.35;
+  }
+  .solution-text-only .solution-panel li::before{
+    width:10px !important;
+    height:2px !important;
+  }
+}
