@@ -1167,3 +1167,20 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
     width:calc(100% - 40px) !important;
   }
 }
+
+
+/* v42 — centrar textos de bullets únicamente en móvil */
+@media (max-width:600px){
+  .solution-text-only .solution-panel li{
+    justify-content:center !important;
+    text-align:center !important;
+    padding-left:40px !important;
+    padding-right:40px !important;
+  }
+}
+@media (max-width:390px){
+  .solution-text-only .solution-panel li{
+    padding-left:34px !important;
+    padding-right:34px !important;
+  }
+}
