@@ -917,3 +917,28 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .instructor-card-line{width:34px;margin:12px 0 10px}
   .instructor-card-body p{font-size:14px}
 }
+
+
+/* v37 — bullets de habilidades: puntos rojos y sin separadores */
+.solution-text-only .solution-panel ul{
+  border-top: 0 !important;
+}
+.solution-text-only .solution-panel li{
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  position: relative;
+  padding-left: 20px !important;
+}
+.solution-text-only .solution-panel li::before{
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  width: 7px !important;
+  height: 7px !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  background: var(--red) !important;
+  transform: translateY(-50%) !important;
+}
