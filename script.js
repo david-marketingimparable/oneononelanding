@@ -8,7 +8,6 @@ closeEls.forEach(b=>b.addEventListener('click',closeModal));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 const testimonials=[
- {image:'assets/testimonial-new-1.png',alt:'Testimonio de cliente 1'},
  {image:'assets/testimonial-new-2.png',alt:'Testimonio de cliente 2'},
  {image:'assets/testimonial-new-3.png',alt:'Testimonio de cliente 3'},
  {image:'assets/testimonial-new-4.png',alt:'Testimonio de cliente 4'},
