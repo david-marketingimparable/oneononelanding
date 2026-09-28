@@ -1212,3 +1212,43 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .instructors-description{font-size:16px}
   .cambridge-logo{width:140px}
 }
+
+
+/* v45 — composición de dos columnas exclusiva para la sección de profesores */
+.instructors{padding:100px 0 105px;background:#fff;overflow:hidden}
+.instructors-container{max-width:1450px;margin:0 auto}
+.instructors-layout{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:center;column-gap:clamp(56px,7vw,112px);width:100%}
+.instructors-photo-wrap{width:100%;min-width:0}
+.instructors-group-photo{display:block;width:100%;height:clamp(560px,43vw,720px);max-height:none;object-fit:cover;object-position:center center;border-radius:9px}
+.instructors-copy{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:0 2px}
+.instructors-accent{display:block;width:62px;height:6px;margin:0 0 40px;background:var(--red,#e11b22)}
+.instructors-heading{max-width:760px;margin:0 0 48px;color:var(--ink,#101114);font-family:var(--serif,'Playfair Display',Georgia,serif);font-size:clamp(48px,4.9vw,78px);font-weight:700;line-height:1.08;letter-spacing:-.035em}
+.instructors-description{max-width:760px;margin:0;color:#536071;font-family:var(--sans,'DM Sans',Arial,sans-serif);font-size:clamp(20px,1.85vw,30px);font-weight:400;line-height:1.58}
+.cambridge-logo{display:block;width:clamp(250px,23vw,360px);max-width:100%;height:auto;max-height:none;object-fit:contain;margin-top:78px}
+@media(max-width:900px){
+  .instructors{padding:75px 0 85px}
+  .instructors-container{padding-left:30px;padding-right:30px}
+  .instructors-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:34px}
+  .instructors-group-photo{height:clamp(430px,62vw,570px)}
+  .instructors-accent{margin-bottom:26px}
+  .instructors-heading{font-size:clamp(38px,5.4vw,52px);margin-bottom:28px}
+  .instructors-description{font-size:clamp(17px,2.2vw,21px)}
+  .cambridge-logo{width:clamp(190px,25vw,250px);margin-top:42px}
+}
+@media(max-width:620px){
+  .instructors{padding:58px 0 68px}
+  .instructors-container{padding-left:22px;padding-right:22px}
+  .instructors-layout{grid-template-columns:minmax(0,1fr);row-gap:34px}
+  .instructors-group-photo{height:auto;aspect-ratio: .9 / 1;object-fit:cover}
+  .instructors-copy{align-items:flex-start;padding:0}
+  .instructors-accent{width:52px;height:5px;margin-bottom:22px}
+  .instructors-heading{font-size:clamp(39px,10vw,54px);line-height:1.08;margin-bottom:24px}
+  .instructors-description{font-size:18px;line-height:1.55}
+  .cambridge-logo{width:220px;margin-top:34px}
+}
+@media(max-width:390px){
+  .instructors-container{padding-left:18px;padding-right:18px}
+  .instructors-heading{font-size:36px}
+  .instructors-description{font-size:16px}
+  .cambridge-logo{width:195px}
+}
