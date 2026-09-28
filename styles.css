@@ -1256,3 +1256,26 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
 
 /* Ajuste final: centrar el logo de Cambridge dentro del espacio de la columna */
 .instructors-copy .cambridge-logo{align-self:center}
+
+
+/* v46 — refinamiento móvil de la sección de profesores */
+@media(max-width:620px){
+  .instructors-container{
+    width:calc(100% - 48px) !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  .instructors-group-photo{
+    width:100%;
+    height:auto;
+    aspect-ratio:auto;
+    max-height:none;
+    object-fit:contain;
+    object-position:center;
+  }
+}
+@media(max-width:390px){
+  .instructors-container{
+    width:calc(100% - 40px) !important;
+  }
+}
