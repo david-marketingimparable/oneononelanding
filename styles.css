@@ -1252,3 +1252,7 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .instructors-description{font-size:16px}
   .cambridge-logo{width:195px}
 }
+
+
+/* Ajuste final: centrar el logo de Cambridge dentro del espacio de la columna */
+.instructors-copy .cambridge-logo{align-self:center}
