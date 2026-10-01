@@ -25,7 +25,7 @@ function sanitizeName(value){
   return value.replace(/[^\p{L}\s]/gu,'').replace(/\s{2,}/g,' ');
 }
 function sanitizePhone(value){
-  return value.replace(/\D/g,'').slice(0,15);
+  return value.replace(/\D/g,'').slice(0,10);
 }
 function isValidEmail(value){
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
