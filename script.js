@@ -70,6 +70,19 @@ function handleLead(form,successEl){
     const leads=JSON.parse(localStorage.getItem('oneonone_leads')||'[]');
     leads.push({...data,createdAt:new Date().toISOString()});
     localStorage.setItem('oneonone_leads',JSON.stringify(leads));
+
+    const message=[
+      'Hola, ONEonONE. Quiero solicitar información sobre sus clases de inglés ejecutivo.',
+      '',
+      'Mis datos:',
+      `Nombre: ${data.name||'No proporcionado'}`,
+      `Correo: ${data.email||'No proporcionado'}`,
+      `Celular: ${data.phone||'No proporcionado'}`,
+      `Empresa: ${data.company||'No proporcionada'}`
+    ].join('\\n');
+    const whatsappUrl=`https://wa.me/528131297975?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl,'_blank','noopener,noreferrer');
+
     form.reset();
     if(successEl){form.hidden=true;successEl.hidden=false;}
     showThankYou();
