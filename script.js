@@ -92,7 +92,7 @@ handleLead(document.getElementById('lead-form'),document.getElementById('form-su
 handleLead(document.getElementById('modal-form'),null);
 document.querySelector('.close-success')?.addEventListener('click',()=>{document.getElementById('form-success').hidden=true;document.getElementById('lead-form').hidden=false});
 
-document.querySelectorAll('.whatsapp-placeholder').forEach(b=>b.addEventListener('click',()=>alert('El número de WhatsApp se configurará cuando el cliente nos lo proporcione.')));
+document.querySelectorAll('.whatsapp-placeholder').forEach(b=>b.addEventListener('click',()=>window.open('https://wa.me/528131297975?text='+encodeURIComponent('Hola, ONEonONE. Quiero conocer más sobre sus clases de inglés ejecutivo.'),'_blank','noopener,noreferrer')));
 show(current);
 
 // Palabra dinámica del hero: líderes → ejecutivos → directivos → gerentes → líderes.
