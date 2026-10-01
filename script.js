@@ -79,7 +79,7 @@ function handleLead(form,successEl){
       `Correo: ${data.email||'No proporcionado'}`,
       `Celular: ${data.phone||'No proporcionado'}`,
       `Empresa: ${data.company||'No proporcionada'}`
-    ].join('\\n');
+    ].join('\n');
     const whatsappUrl=`https://wa.me/528131297975?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl,'_blank','noopener,noreferrer');
 
