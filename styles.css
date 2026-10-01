@@ -1308,3 +1308,8 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
  .instructors-brand-panel{min-height:180px}
  .instructors-brand-panel .cambridge-logo{width:min(72%,235px)}
 }
+
+
+/* Hero: improve readability of the live videoconference label */
+.hero-copy>.eyebrow{font-size:13px;letter-spacing:2.5px;gap:16px}
+@media(max-width:760px){.hero-copy>.eyebrow{font-size:12px;letter-spacing:2px;gap:12px}}
