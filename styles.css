@@ -1353,3 +1353,10 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .contact .contact-form-card{display:none!important;}
   .contact .contact-call-mobile{display:inline-flex!important;width:max-content!important;max-width:100%!important;min-width:0!important;margin-top:24px;padding:11px 20px;font-size:14px;}
 }
+
+
+/* Ícono telefónico en los CTA de llamada exclusivos para móvil. */
+@media (max-width: 600px){
+  .hero-call-mobile,.contact-call-mobile{align-items:center;justify-content:center;gap:9px!important;}
+  .hero-call-mobile .call-button-icon,.contact-call-mobile .call-button-icon{display:block;width:19px;height:19px;flex:0 0 19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+}
