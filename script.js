@@ -108,8 +108,7 @@ show(current);
       index = (index + 1) % words.length;
       word.textContent = words[index];
       word.classList.remove('flip-out');
-      void word.offsetWidth;
-      word.classList.add('flip-in');
+      requestAnimationFrame(() => word.classList.add('flip-in'));
     }, 380);
   };
   setInterval(changeWord, 3000);
@@ -131,7 +130,7 @@ show(current);
     revealEls.forEach(el => observer.observe(el));
   } else revealEls.forEach(el => el.classList.add('is-visible'));
 
-  if (reduce || !layers.length) return;
+  if (reduce || !layers.length || window.matchMedia('(max-width: 600px)').matches) return;
   let ticking=false;
   const update=()=>{
     const vh=window.innerHeight;
