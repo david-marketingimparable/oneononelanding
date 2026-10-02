@@ -1360,3 +1360,19 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .hero-call-mobile,.contact-call-mobile{align-items:center;justify-content:center;gap:9px!important;}
   .hero-call-mobile .call-button-icon,.contact-call-mobile .call-button-icon{display:block;width:19px;height:19px;flex:0 0 19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
 }
+
+
+/* v54 — afinación de rendimiento para pantallas móviles */
+@media (max-width:600px){
+  html{scroll-behavior:auto}
+  .site-header{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.98)}
+  .reveal,.reveal-stagger{transition-duration:.35s!important}
+  .hero-image img[data-parallax]{transform:none!important;will-change:auto!important}
+  .hero,.hero-grid{min-height:0}
+  .hero-copy{min-width:0}
+  .company-logos img,.testimonial-image-frame img,.hero-image img{max-width:100%;height:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
