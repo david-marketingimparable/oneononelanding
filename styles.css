@@ -1313,3 +1313,8 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
 /* Hero: improve readability of the live videoconference label */
 .hero-copy>.eyebrow{font-size:13px;letter-spacing:2.5px;gap:16px}
 @media(max-width:760px){.hero-copy>.eyebrow{font-size:12px;letter-spacing:2px;gap:12px}}
+
+
+/* Botón de llamada: exclusivo para celulares en la sección de contacto. */
+.contact-call-mobile{display:none}
+@media(max-width:600px){.contact-call-mobile{display:inline-flex;width:100%;margin-top:24px;background:#25d366;color:#fff;gap:10px;padding:16px 24px;font-size:15px}.contact-call-mobile:hover{background:#1fbd5b}.contact-call-mobile svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}}
