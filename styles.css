@@ -1344,3 +1344,13 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .floating-whatsapp svg{width:20px!important;height:20px!important}
   .floating-whatsapp span{display:none!important}
 }
+
+
+/* Corrección móvil: un CTA compacto en hero y llamada en lugar del formulario. */
+.hero-call-mobile,.contact-call-mobile{display:none}
+@media (max-width: 600px){
+  .hero-actions .open-form{display:none!important}
+  .hero-actions .hero-call-mobile{display:inline-flex!important;width:max-content!important;max-width:calc(100% - 24px)!important;min-width:0!important;padding:10px 18px!important;gap:8px!important;font-size:13px!important;}
+  .contact .contact-form-card{display:none!important;}
+  .contact .contact-call-mobile{display:inline-flex!important;width:max-content!important;max-width:100%!important;min-width:0!important;margin-top:24px;padding:11px 20px;font-size:14px;}
+}
