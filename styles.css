@@ -1325,7 +1325,6 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
 
 
 /* v49 — botón flotante compacto: visible únicamente en celulares */
-.floating-whatsapp{display:none!important}
 @media(max-width:600px){
   .floating-whatsapp{
     display:inline-flex!important;
