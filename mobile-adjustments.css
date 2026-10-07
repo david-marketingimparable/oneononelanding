@@ -125,3 +125,25 @@
     color:var(--red) !important;
   }
 }
+
+
+/* Bullets de habilidades: entrada secuencial y suave exclusivamente en móvil. */
+@media (max-width: 600px){
+  #solucion .solution-panel li{
+    padding-left:52px !important;
+    transform:translate3d(0,18px,0);
+    opacity:0;
+    transition:opacity .65s ease, transform .65s cubic-bezier(.22,1,.36,1);
+  }
+  #solucion .solution-panel li::before{width:28px !important;}
+  #solucion .solution-panel li.is-mobile-visible{opacity:1;transform:translate3d(0,0,0);}
+  #solucion .solution-panel li:nth-child(1).is-mobile-visible{transition-delay:0s}
+  #solucion .solution-panel li:nth-child(2).is-mobile-visible{transition-delay:.1s}
+  #solucion .solution-panel li:nth-child(3).is-mobile-visible{transition-delay:.2s}
+  #solucion .solution-panel li:nth-child(4).is-mobile-visible{transition-delay:.3s}
+  #solucion .solution-panel li:nth-child(5).is-mobile-visible{transition-delay:.4s}
+  #solucion .solution-panel li:nth-child(6).is-mobile-visible{transition-delay:.5s}
+}
+@media (max-width:600px) and (prefers-reduced-motion:reduce){
+  #solucion .solution-panel li{opacity:1 !important;transform:none !important;transition:none !important}
+}
