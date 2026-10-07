@@ -99,3 +99,13 @@
     object-position:center !important;
   }
 }
+
+
+/* Empresas: permitir que "confían en nosotros:" permanezca en un mismo renglón en móvil. */
+@media (max-width: 600px){
+  .companies-heading h2{
+    max-width:360px !important;
+    font-size:40px !important;
+    letter-spacing:-1.7px !important;
+  }
+}
