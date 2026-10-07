@@ -169,7 +169,7 @@ show(current);
   const close = document.querySelector('.whatsapp-chat-close');
   if (!chat || !floating || !input || !send) return;
 
-  const dismissedKey = 'oneonone_whatsapp_chat_dismissed';
+  const dismissedKey = 'oneonone_whatsapp_chat_dismissed_v2';
   let dismissed = sessionStorage.getItem(dismissedKey) === '1';
   let timer = null;
 
