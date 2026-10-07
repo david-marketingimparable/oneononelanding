@@ -48,3 +48,33 @@
     margin-top:4px;
   }
 }
+
+
+/* Título de empresas: refinamiento exclusivo para móvil. */
+@media (max-width: 600px){
+  .companies-heading{
+    text-align:left !important;
+    margin-bottom:42px !important;
+  }
+
+  .companies-heading::before{
+    content:"";
+    display:block;
+    width:48px;
+    height:3px;
+    background:var(--red);
+    margin-bottom:24px;
+  }
+
+  .companies-heading h2{
+    margin:0 !important;
+    max-width:330px;
+    color:var(--ink) !important;
+    font-family:var(--serif) !important;
+    font-size:42px !important;
+    font-weight:600 !important;
+    line-height:1.02 !important;
+    letter-spacing:-1.5px !important;
+    text-transform:none !important;
+  }
+}
