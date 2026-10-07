@@ -208,3 +208,21 @@
     text-align:left !important;
   }
 }
+
+
+/* Solución móvil: desplazar ligeramente al centro el título y las líneas rojas. */
+@media (max-width:600px){
+  #solucion .solution-panel h2{
+    padding-left:28px !important;
+    padding-right:8px !important;
+  }
+
+  #solucion .solution-panel li{
+    padding-left:96px !important;
+    padding-right:18px !important;
+  }
+
+  #solucion .solution-panel li::before{
+    left:28px !important;
+  }
+}
