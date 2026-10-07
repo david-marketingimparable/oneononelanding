@@ -1663,3 +1663,58 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
     font-size:21px;
   }
 }
+
+
+/* Chat WhatsApp móvil: reducción adicional al 65% del tamaño anterior. */
+@media(max-width:600px){
+  .whatsapp-chat-widget{
+    width:min(290px, calc(100vw - 32px));
+    max-width:290px;
+    height:305px;
+    right:16px;
+    bottom:70px;
+  }
+  .whatsapp-chat-header{
+    height:40px;
+    flex-basis:40px;
+    padding:0 7px;
+  }
+  .whatsapp-chat-header button{
+    width:30px;
+    height:30px;
+    font-size:24px;
+  }
+  .whatsapp-chat-minimize{font-size:26px!important}
+  .whatsapp-chat-close{font-size:28px!important}
+  .whatsapp-chat-body{
+    padding:7px 8px 7px;
+    gap:7px;
+  }
+  .whatsapp-chat-message{
+    font-size:11px;
+    line-height:1.28;
+    padding:7px 9px 5px;
+    max-width:94%;
+  }
+  .whatsapp-chat-message time{
+    font-size:8px;
+    margin-top:2px;
+  }
+  .whatsapp-chat-composer{
+    min-height:39px;
+    padding:3px 4px 3px 7px;
+    gap:4px;
+  }
+  .whatsapp-chat-emoji{font-size:18px}
+  .whatsapp-chat-attach{font-size:18px}
+  #whatsapp-chat-input{
+    height:31px;
+    font-size:11px;
+  }
+  #whatsapp-chat-send{
+    width:34px;
+    height:34px;
+    flex-basis:34px;
+    font-size:18px;
+  }
+}
