@@ -158,3 +158,59 @@ show(current);
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll,{passive:true});
 })();
+
+
+// Chat emergente de WhatsApp: aparece una sola vez tras 3 segundos.
+(() => {
+  const chat = document.getElementById('whatsapp-chat-widget');
+  const floating = document.querySelector('.floating-whatsapp');
+  const input = document.getElementById('whatsapp-chat-input');
+  const send = document.getElementById('whatsapp-chat-send');
+  const minimize = document.querySelector('.whatsapp-chat-minimize');
+  const close = document.querySelector('.whatsapp-chat-close');
+  if (!chat || !floating || !input || !send) return;
+
+  const dismissedKey = 'oneonone_whatsapp_chat_dismissed';
+  let dismissed = sessionStorage.getItem(dismissedKey) === '1';
+  let timer = null;
+
+  const showChat = (focusInput = true) => {
+    if (dismissed) return;
+    if (timer) { clearTimeout(timer); timer = null; }
+    chat.classList.add('is-open');
+    chat.setAttribute('aria-hidden','false');
+    floating.classList.add('chat-hidden');
+    if (focusInput) setTimeout(() => input.focus(), 120);
+  };
+
+  const hideChat = (permanent = true) => {
+    if (timer) { clearTimeout(timer); timer = null; }
+    if (permanent) {
+      dismissed = true;
+      sessionStorage.setItem(dismissedKey,'1');
+    }
+    chat.classList.remove('is-open');
+    chat.setAttribute('aria-hidden','true');
+    floating.classList.remove('chat-hidden');
+  };
+
+  const sendMessage = () => {
+    const message = input.value.trim();
+    if (!message) { input.focus(); return; }
+    const url = 'https://wa.me/528131297975?text=' + encodeURIComponent(message);
+    window.open(url,'_blank','noopener,noreferrer');
+    input.value = '';
+  };
+
+  if (!dismissed) timer = setTimeout(() => showChat(false), 3000);
+  floating.addEventListener('click', () => showChat(true));
+  minimize?.addEventListener('click', () => hideChat(true));
+  close?.addEventListener('click', () => hideChat(true));
+  send.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+})();
