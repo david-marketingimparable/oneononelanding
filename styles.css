@@ -1670,7 +1670,7 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .whatsapp-chat-widget{
     width:min(290px, calc(100vw - 32px));
     max-width:290px;
-    height:305px;
+    height:245px;
     right:16px;
     bottom:70px;
   }
