@@ -1709,7 +1709,9 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   .whatsapp-chat-attach{font-size:18px}
   #whatsapp-chat-input{
     height:31px;
-    font-size:11px;
+    font-size:16px;
+    line-height:1.2;
+    -webkit-text-size-adjust:100%;
   }
   #whatsapp-chat-send{
     width:34px;
