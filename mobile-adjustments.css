@@ -109,3 +109,11 @@
     letter-spacing:-1.7px !important;
   }
 }
+
+
+/* "nosotros" en rojo, exclusivamente en móvil, usando el rojo de ONEonONE. */
+@media (max-width: 600px){
+  .companies-heading h2 .mobile-red-word{
+    color:var(--red) !important;
+  }
+}
