@@ -166,3 +166,37 @@
   #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(5){transition-delay:.4s !important}
   #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(6){transition-delay:.5s !important}
 }
+
+
+/* Animación robusta de los 6 bullets: se activa cuando la sección entra al viewport. */
+@media (max-width:600px){
+  #solucion .solution-panel li{
+    opacity:0 !important;
+    transform:translateY(18px) !important;
+    transition:opacity .65s ease, transform .65s cubic-bezier(.22,1,.36,1) !important;
+  }
+
+  #solucion .solution-visual.is-visible .solution-panel li{
+    opacity:1 !important;
+    transform:translateY(0) !important;
+  }
+
+  #solucion .solution-visual.is-visible .solution-panel li:nth-child(1){transition-delay:0s !important}
+  #solucion .solution-visual.is-visible .solution-panel li:nth-child(2){transition-delay:.10s !important}
+  #solucion .solution-visual.is-visible .solution-panel li:nth-child(3){transition-delay:.20s !important}
+  #solucion .solution-visual.is-visible .solution-panel li:nth-child(4){transition-delay:.30s !important}
+  #solucion .solution-visual.is-visible .solution-panel li:nth-child(5){transition-delay:.40s !important}
+  #solucion .solution-visual.is-visible .solution-panel li:nth-child(6){transition-delay:.50s !important}
+
+  #solucion .solution-panel li::before{
+    width:24px !important;
+  }
+}
+
+@media (max-width:600px) and (prefers-reduced-motion:reduce){
+  #solucion .solution-panel li{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+  }
+}
