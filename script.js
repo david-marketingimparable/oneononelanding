@@ -92,7 +92,6 @@ handleLead(document.getElementById('lead-form'),document.getElementById('form-su
 handleLead(document.getElementById('modal-form'),null);
 document.querySelector('.close-success')?.addEventListener('click',()=>{document.getElementById('form-success').hidden=true;document.getElementById('lead-form').hidden=false});
 
-document.querySelectorAll('.whatsapp-placeholder').forEach(b=>b.addEventListener('click',()=>window.open('https://wa.me/528131297975?text='+encodeURIComponent('Hola, One on One. Quiero conocer más sobre sus clases de inglés ejecutivo.'),'_blank','noopener,noreferrer')));
 show(current);
 
 // Palabra dinámica del hero: líderes → ejecutivos → directivos → gerentes → líderes.
@@ -174,8 +173,8 @@ show(current);
   let dismissed = sessionStorage.getItem(dismissedKey) === '1';
   let timer = null;
 
-  const showChat = (focusInput = true) => {
-    if (dismissed) return;
+  const showChat = (focusInput = true, manual = false) => {
+    if (dismissed && !manual) return;
     if (timer) { clearTimeout(timer); timer = null; }
     chat.classList.add('is-open');
     chat.setAttribute('aria-hidden','false');
@@ -203,7 +202,7 @@ show(current);
   };
 
   if (!dismissed) timer = setTimeout(() => showChat(false), 3000);
-  floating.addEventListener('click', () => showChat(true));
+  floating.addEventListener('click', () => showChat(true, true));
   minimize?.addEventListener('click', () => hideChat(true));
   close?.addEventListener('click', () => hideChat(true));
   send.addEventListener('click', sendMessage);
