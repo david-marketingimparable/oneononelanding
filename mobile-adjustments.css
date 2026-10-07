@@ -200,3 +200,11 @@
     transition:none !important;
   }
 }
+
+
+/* Título de solución alineado a la izquierda exclusivamente en móvil. */
+@media (max-width:600px){
+  #solucion .solution-panel h2{
+    text-align:left !important;
+  }
+}
