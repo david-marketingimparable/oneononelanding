@@ -78,3 +78,24 @@
     text-transform:none !important;
   }
 }
+
+
+/* Logotipos: evitar recortes de PepsiCo y AlEn exclusivamente en móvil. */
+@media (max-width: 600px){
+  .company-logos{
+    align-items:center !important;
+    row-gap:22px !important;
+  }
+
+  .company-logo{
+    height:105px !important;
+    overflow:visible !important;
+  }
+
+  .company-logo img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+  }
+}
