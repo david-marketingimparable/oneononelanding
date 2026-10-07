@@ -1,0 +1,50 @@
+/* Ajustes solicitados para la versión móvil de ONEonONE.
+   La versión de escritorio conserva el diseño y comportamiento actuales. */
+
+@media (max-width: 600px){
+  /* Hero: usar exactamente el CTA de escritorio para abrir el formulario. */
+  .hero-actions .open-form{
+    display:inline-flex !important;
+    width:max-content !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    padding:11px 20px !important;
+    font-size:14px !important;
+    gap:12px !important;
+  }
+
+  /* El formulario de contacto debe aparecer también en móvil. */
+  .contact-grid{
+    gap:30px !important;
+    align-items:start !important;
+  }
+
+  .contact-copy{
+    width:100%;
+  }
+
+  .contact-form-card{
+    display:block !important;
+    width:100%;
+    padding:28px 22px !important;
+    border-radius:14px;
+    box-shadow:none;
+  }
+
+  .contact-form-card label{
+    font-size:14px;
+    margin-bottom:18px;
+  }
+
+  .contact-form-card input{
+    min-height:54px;
+    font-size:16px;
+    padding:14px 15px;
+  }
+
+  .contact-form-card .btn-submit{
+    min-height:56px;
+    font-size:15px;
+    margin-top:4px;
+  }
+}
