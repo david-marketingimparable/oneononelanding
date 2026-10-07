@@ -147,3 +147,22 @@
 @media (max-width:600px) and (prefers-reduced-motion:reduce){
   #solucion .solution-panel li{opacity:1 !important;transform:none !important;transition:none !important}
 }
+
+
+@media (max-width:600px){
+  #solucion .solution-panel ul.reveal-stagger > li{
+    opacity:0 !important;
+    transform:translateY(18px) !important;
+    transition:opacity .6s ease, transform .6s ease !important;
+  }
+  #solucion .solution-panel ul.reveal-stagger.is-visible > li{
+    opacity:1 !important;
+    transform:translateY(0) !important;
+  }
+  #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(1){transition-delay:0s !important}
+  #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(2){transition-delay:.1s !important}
+  #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(3){transition-delay:.2s !important}
+  #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(4){transition-delay:.3s !important}
+  #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(5){transition-delay:.4s !important}
+  #solucion .solution-panel ul.reveal-stagger.is-visible > li:nth-child(6){transition-delay:.5s !important}
+}
