@@ -117,3 +117,11 @@
     color:var(--red) !important;
   }
 }
+
+
+/* "alto impacto" en rojo ONEonONE, exclusivamente en móvil. */
+@media (max-width: 600px){
+  #solucion .solution-panel h2 .mobile-red-word{
+    color:var(--red) !important;
+  }
+}
