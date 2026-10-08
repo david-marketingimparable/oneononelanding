@@ -9,7 +9,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"></noscript>
 <link rel="preload" as="image" href="https://david-marketingimparable.github.io/oneononelanding/assets/hero-executive-wide.webp?v=2" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=59">
+<style>
+:root{--red:#e11b22;--ink:#101114;--white:#fff;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--max:1280px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--sans);background:#fff}
+button,a{font:inherit}
+a{text-decoration:none;color:inherit}
+.container{width:min(calc(100% - 96px),var(--max));margin:auto}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(16,17,20,.06)}
+.nav-wrap{height:76px;display:flex;align-items:center}
+.logo{display:block;white-space:nowrap}
+.logo img{display:block;width:249px;height:auto}
+.hero{min-height:650px}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;min-height:650px}
+.hero-copy{padding:95px 0 70px}
+.eyebrow{display:flex;align-items:center;gap:16px;font-size:11px;font-weight:700;letter-spacing:3px;color:#5c6675;margin-bottom:28px}
+.eyebrow i{width:40px;height:2px;background:var(--red);display:block}
+.hero h1{font-family:var(--serif);font-weight:600;letter-spacing:-2.3px;margin:0;font-size:clamp(48px,5.1vw,76px);line-height:.98;max-width:720px}
+.hero h1 .flip-word{display:inline-block;color:var(--red);min-width:5.8ch}
+.hero-sub{font-size:21px;color:#5b6572;max-width:640px;margin:22px 0 32px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:20px;border-radius:999px;padding:16px 25px;font-weight:700;font-size:14px}
+.btn-primary{background:var(--red);color:#fff}
+.hero-image{position:relative;overflow:hidden;min-height:650px}
+.hero-image img{width:100%;height:100%;object-fit:cover;object-position:52% center;display:block}
+.hero-results{margin-top:54px}
+.hero-results-stats{display:flex}
+@media(max-width:900px){.container{width:min(calc(100% - 40px),var(--max))}.nav-wrap{height:68px}.hero-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-copy{padding:70px 0 45px}.hero-image{min-height:430px}}
+@media(max-width:600px){.logo img{width:249px}.hero h1{font-size:48px}.hero-sub{font-size:17px}.hero-image{min-height:330px}.hero-results{margin-top:36px}.hero-results-stats{gap:10px}}
+</style>
+<link rel="preload" as="style" href="styles.css?v=60" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="styles.css?v=60"></noscript>
 </head>
 <body>
 <header class="site-header" id="inicio">
