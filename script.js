@@ -213,7 +213,13 @@ show(current);
     input.value = '';
   };
 
-  if (!dismissed) timer = setTimeout(() => showChat(false), 3000);
+  document.addEventListener('oneonone:booking-open', () => hideChat(true));
+
+  if (!dismissed) timer = setTimeout(() => {
+    timer = null;
+    const bookingInProgress = modal?.classList.contains('is-open') || document.body.classList.contains('thank-you-mode');
+    if (!bookingInProgress) showChat(false);
+  }, 5000);
   floating.addEventListener('click', () => showChat(true, true));
   minimize?.addEventListener('click', () => hideChat(true));
   close?.addEventListener('click', () => hideChat(true));
