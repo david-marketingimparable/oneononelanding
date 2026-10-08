@@ -8,16 +8,16 @@ closeEls.forEach(b=>b.addEventListener('click',closeModal));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 const testimonials=[
- {image:'assets/testimonial-new-1-560.webp',alt:'Testimonio de cliente 1'},
- {image:'assets/testimonial-new-2-560.webp',alt:'Testimonio de cliente 2'},
- {image:'assets/testimonial-new-3-560.webp',alt:'Testimonio de cliente 3'},
- {image:'assets/testimonial-new-5-560.webp',alt:'Testimonio de cliente 5'}
+ {image:'assets/testimonial-new-1-560.webp',srcset:'assets/testimonial-new-1-560.webp 560w, assets/testimonial-new-1-768.webp 768w',alt:'Testimonio de cliente 1'},
+ {image:'assets/testimonial-new-2-560.webp',srcset:'assets/testimonial-new-2-560.webp 560w, assets/testimonial-new-2-768.webp 768w',alt:'Testimonio de cliente 2'},
+ {image:'assets/testimonial-new-3-560.webp',srcset:'assets/testimonial-new-3-560.webp 560w, assets/testimonial-new-3-768.webp 768w',alt:'Testimonio de cliente 3'},
+ {image:'assets/testimonial-new-5-560.webp',srcset:'assets/testimonial-new-5-560.webp 560w, assets/testimonial-new-5-768.webp 768w',alt:'Testimonio de cliente 5'}
 ];
 let current=0;
 const img=document.getElementById('testimonial-image'),dots=document.getElementById('testimonial-dots');
 
 testimonials.forEach((t,i)=>{const d=document.createElement('button');d.className='dot'+(i===current?' active':'');d.type='button';d.setAttribute('aria-label',`Ver testimonio ${i+1}`);d.addEventListener('click',()=>show(i));dots.appendChild(d)});
-function show(i){current=(i+testimonials.length)%testimonials.length;const t=testimonials[current];img.src=t.image;img.alt=t.alt;[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===current));}
+function show(i){current=(i+testimonials.length)%testimonials.length;const t=testimonials[current];img.src=t.image;img.srcset=t.srcset||'';img.sizes='(max-width: 600px) 100vw, 518px';img.alt=t.alt;[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===current));}
 document.querySelector('.testimonial-prev').addEventListener('click',()=>show(current-1));
 document.querySelector('.testimonial-next').addEventListener('click',()=>show(current+1));
 
