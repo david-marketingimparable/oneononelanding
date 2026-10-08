@@ -410,3 +410,30 @@
     transition:none !important;
   }
 }
+
+
+/* Optimización de renderizado móvil:
+   evita pintar secciones fuera de pantalla hasta que sean necesarias. */
+@media (max-width:600px){
+  .hero-program-section,
+  .companies,
+  .testimonials,
+  .challenge,
+  .solution,
+  .process,
+  .fit-final,
+  .instructors,
+  .contact{
+    content-visibility:auto;
+    contain-intrinsic-size:700px;
+  }
+
+  .companies{contain-intrinsic-size:620px;}
+  .testimonials{contain-intrinsic-size:650px;}
+  .challenge{contain-intrinsic-size:620px;}
+  .solution{contain-intrinsic-size:760px;}
+  .process{contain-intrinsic-size:760px;}
+  .fit-final{contain-intrinsic-size:1100px;}
+  .instructors{contain-intrinsic-size:620px;}
+  .contact{contain-intrinsic-size:760px;}
+}
