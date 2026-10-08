@@ -97,7 +97,7 @@ show(current);
 // Palabra dinámica del hero: líderes → ejecutivos → directivos → gerentes → líderes.
 (() => {
   const word = document.querySelector('.flip-word');
-  if (!word || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!word || window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.matchMedia('(max-width: 600px)').matches) return;
   const words = ['líderes.', 'ejecutivos.', 'directivos.', 'gerentes.'];
   let index = 0;
   const changeWord = () => {
