@@ -10,3 +10,5 @@
 .whatsapp-chat-composer{min-height:52px}
 #whatsapp-chat-input{display:block;min-width:0;flex:1;height:38px;min-height:38px;max-height:38px;padding:0 2px;border:0!important;outline:0!important;background:transparent!important;color:#20242a;font:14px/18px var(--sans,'DM Sans',Arial,sans-serif);box-shadow:none!important;resize:none;overflow:hidden;white-space:pre-wrap;overflow-wrap:anywhere}
 @media(max-width:600px){.whatsapp-chat-composer{min-height:52px}#whatsapp-chat-input{height:38px;min-height:38px;max-height:38px;font-size:14px;line-height:18px}}
+
+@media(max-width:600px){.whatsapp-chat-widget{bottom:80px}}
