@@ -213,7 +213,9 @@ show(current);
     input.value = '';
   };
 
-  document.addEventListener('oneonone:booking-open', () => hideChat(true));
+  document.addEventListener('click', event => {
+    if (event.target.closest('.open-form')) hideChat(true);
+  });
 
   if (!dismissed) timer = setTimeout(() => {
     timer = null;
