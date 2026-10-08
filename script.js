@@ -188,6 +188,7 @@ show(current);
       time.textContent = localTime;
     });
 
+    floating.classList.remove('chat-hidden');
     chat.classList.add('is-open');
     chat.setAttribute('aria-hidden','false');
     if (focusInput) setTimeout(() => input.focus(), 120);
