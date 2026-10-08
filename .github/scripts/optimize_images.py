@@ -1,47 +1,65 @@
 from pathlib import Path
 from PIL import Image
-import re
 
 ROOT = Path(".")
 ASSETS = ROOT / "assets"
-TEXT_EXTENSIONS = {".html", ".css", ".js"}
-MIN_BYTES = 35_000
 
-text_files = [p for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in TEXT_EXTENSIONS and ".git" not in p.parts]
-references = set()
-for path in text_files:
-    source = path.read_text(encoding="utf-8")
-    references.update(re.findall(r"assets/[A-Za-z0-9_.-]+\.(?:png|jpe?g)", source, re.I))
+# Keep the visual appearance and existing URLs, but avoid shipping pixels far
+# beyond the largest size the landing page needs.
+MAX_DIMENSIONS = {
+    "hero-executive-wide.webp": 800,
+    "testimonial-new-1.webp": 768,
+    "testimonial-new-2.webp": 768,
+    "testimonial-new-3.webp": 768,
+    "testimonial-new-5.webp": 768,
+    "logo-chubb.webp": 512,
+    "logo-autozone.webp": 512,
+    "logo-softtek.webp": 256,
+    "logo-cemex.jpg": 600,
+    "logo-banorte.webp": 768,
+    "logo-benavides.png": 600,
+    "logo-pepsico.webp": 600,
+    "logo-alen.png": 256,
+    "logo-one-on-one.png": 512,
+    "fit-person.webp": 1200,
+}
 
-mapping = {}
-for rel in sorted(references):
-    src = ROOT / rel
-    if not src.exists() or src.stat().st_size < MIN_BYTES:
+for name, max_dimension in MAX_DIMENSIONS.items():
+    src = ASSETS / name
+    if not src.exists():
         continue
+
     try:
+        original_bytes = src.read_bytes()
         with Image.open(src) as original:
             image = original.copy()
-            image.thumbnail((1400, 1400), Image.Resampling.LANCZOS)
-            target = src.with_suffix(".webp")
-            if "A" in image.getbands():
-                image.save(target, "WEBP", quality=82, method=6)
+            image.thumbnail((max_dimension, max_dimension), Image.Resampling.LANCZOS)
+
+            ext = src.suffix.lower()
+            save_kwargs = {}
+
+            if ext == ".webp":
+                save_kwargs = {"format": "WEBP", "quality": 84, "method": 6}
+                if image.mode not in ("RGB", "RGBA"):
+                    image = image.convert("RGBA" if "A" in image.getbands() else "RGB")
+            elif ext in (".jpg", ".jpeg"):
+                if image.mode != "RGB":
+                    image = image.convert("RGB")
+                save_kwargs = {"format": "JPEG", "quality": 84, "optimize": True, "progressive": True}
+            elif ext == ".png":
+                save_kwargs = {"format": "PNG", "optimize": True, "compress_level": 9}
             else:
-                image.convert("RGB").save(target, "WEBP", quality=82, method=6)
-            if target.stat().st_size < src.stat().st_size:
-                mapping[rel] = target.relative_to(ROOT).as_posix()
+                continue
+
+            tmp = src.with_suffix(src.suffix + ".tmp")
+            image.save(tmp, **save_kwargs)
+            optimized = tmp.read_bytes()
+            tmp.unlink(missing_ok=True)
+
+            if len(optimized) < len(original_bytes):
+                src.write_bytes(optimized)
+                print(f"{name}: {len(original_bytes)} -> {len(optimized)} bytes")
             else:
-                target.unlink(missing_ok=True)
+                print(f"{name}: kept original ({len(original_bytes)} bytes)")
     except Exception as exc:
-        print(f"Skipped {rel}: {exc}")
-
-for path in text_files:
-    source = path.read_text(encoding="utf-8")
-    updated = source
-    for old, new in mapping.items():
-        updated = updated.replace(old, new)
-    if updated != source:
-        path.write_text(updated, encoding="utf-8")
-
-print(f"Optimized {len(mapping)} referenced images.")
-for old, new in mapping.items():
-    print(f"{old} -> {new}")
+        print(f"Skipped {name}: {exc}")
