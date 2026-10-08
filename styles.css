@@ -1,5 +1,9 @@
 
 
+/* Keep the WhatsApp control available while the chat is open. */
+.whatsapp-chat-widget.is-open ~ .floating-whatsapp,.whatsapp-chat-widget.is-open ~ .floating-whatsapp.chat-hidden{display:inline-flex!important;position:fixed!important;right:28px!important;bottom:28px!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;z-index:2000!important;transform:none!important}
+@media(max-width:600px){.whatsapp-chat-widget.is-open ~ .floating-whatsapp,.whatsapp-chat-widget.is-open ~ .floating-whatsapp.chat-hidden{right:16px!important;bottom:16px!important;width:54px!important;height:54px!important}}
+
 /* WhatsApp chat: show the complete prefilled message on two lines. */
 .whatsapp-chat-composer{min-height:52px}
 #whatsapp-chat-input{display:block;min-width:0;flex:1;height:38px;min-height:38px;max-height:38px;padding:0 2px;border:0!important;outline:0!important;background:transparent!important;color:#20242a;font:14px/18px var(--sans,'DM Sans',Arial,sans-serif);box-shadow:none!important;resize:none;overflow:hidden;white-space:pre-wrap;overflow-wrap:anywhere}
