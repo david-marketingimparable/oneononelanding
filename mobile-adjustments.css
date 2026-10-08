@@ -284,6 +284,10 @@
   font-weight:600;
 }
 
+.solution-red-phrase{
+  white-space:nowrap;
+}
+
 .solution-red-word{
   color:var(--red);
 }
@@ -345,8 +349,11 @@
     text-align:left !important;
   }
 
+  .solution-red-phrase{
+    white-space:nowrap;
+  }
+
   .solution-red-word{
-    display:block;
     white-space:nowrap;
   }
 
