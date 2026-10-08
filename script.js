@@ -8,17 +8,16 @@ closeEls.forEach(b=>b.addEventListener('click',closeModal));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 const testimonials=[
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-1.webp&w=600&output=webp&q=88&maxage=1y',original:'assets/testimonial-new-1.webp',alt:'Testimonio de cliente 1'},
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-2.webp&w=600&output=webp&q=88&maxage=1y',original:'assets/testimonial-new-2.webp',alt:'Testimonio de cliente 2'},
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-3.webp&w=600&output=webp&q=88&maxage=1y',original:'assets/testimonial-new-3.webp',alt:'Testimonio de cliente 3'},
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-5.webp&w=600&output=webp&q=88&maxage=1y',original:'assets/testimonial-new-5.webp',alt:'Testimonio de cliente 5'}
+ {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-1.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 1'},
+ {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-2.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 2'},
+ {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-3.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 3'},
+ {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-5.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 5'}
 ];
 let current=0;
 const img=document.getElementById('testimonial-image'),dots=document.getElementById('testimonial-dots');
 
 testimonials.forEach((t,i)=>{const d=document.createElement('button');d.className='dot'+(i===current?' active':'');d.type='button';d.setAttribute('aria-label',`Ver testimonio ${i+1}`);d.addEventListener('click',()=>show(i));dots.appendChild(d)});
-function show(i){current=(i+testimonials.length)%testimonials.length;const t=testimonials[current];img.dataset.original=t.original;img.src=t.image;img.alt=t.alt;[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===current));}
-img.addEventListener('error',()=>{if(img.dataset.original&&img.src!==new URL(img.dataset.original,location.href).href){img.src=img.dataset.original;}},{once:false});
+function show(i){current=(i+testimonials.length)%testimonials.length;const t=testimonials[current];img.src=t.image;img.alt=t.alt;[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===current));}
 document.querySelector('.testimonial-prev').addEventListener('click',()=>show(current-1));
 document.querySelector('.testimonial-next').addEventListener('click',()=>show(current+1));
 
