@@ -190,7 +190,6 @@ show(current);
 
     chat.classList.add('is-open');
     chat.setAttribute('aria-hidden','false');
-    floating.classList.add('chat-hidden');
     if (focusInput) setTimeout(() => input.focus(), 120);
   };
 
@@ -222,7 +221,10 @@ show(current);
     const bookingInProgress = modal?.classList.contains('is-open') || document.body.classList.contains('thank-you-mode');
     if (!bookingInProgress) showChat(false);
   }, 5000);
-  floating.addEventListener('click', () => showChat(true, true));
+  floating.addEventListener('click', () => {
+    if (chat.classList.contains('is-open')) hideChat(true);
+    else showChat(true, true);
+  });
   minimize?.addEventListener('click', () => hideChat(true));
   close?.addEventListener('click', () => hideChat(true));
   send.addEventListener('click', sendMessage);
