@@ -12,3 +12,7 @@
 @media(max-width:600px){.whatsapp-chat-composer{min-height:52px}#whatsapp-chat-input{height:38px;min-height:38px;max-height:38px;font-size:14px;line-height:18px}}
 
 @media(max-width:600px){.whatsapp-chat-widget{bottom:80px}}
+
+
+/* Keep the green WhatsApp close button visible below the open chat. */
+.whatsapp-chat-widget.is-open ~ .floating-whatsapp{visibility:visible!important;opacity:1!important;pointer-events:auto!important;z-index:1201!important}
