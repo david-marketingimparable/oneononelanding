@@ -176,6 +176,18 @@ show(current);
   const showChat = (focusInput = true, manual = false) => {
     if (dismissed && !manual) return;
     if (timer) { clearTimeout(timer); timer = null; }
+
+    // La hora mostrada en el chat usa la hora local del dispositivo visitante.
+    const now = new Date();
+    const localTime = new Intl.DateTimeFormat('es-MX', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    }).format(now);
+    chat.querySelectorAll('.whatsapp-chat-message time').forEach(time => {
+      time.textContent = localTime;
+    });
+
     chat.classList.add('is-open');
     chat.setAttribute('aria-hidden','false');
     floating.classList.add('chat-hidden');
