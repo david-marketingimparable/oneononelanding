@@ -8,10 +8,10 @@ closeEls.forEach(b=>b.addEventListener('click',closeModal));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 const testimonials=[
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-1.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 1'},
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-2.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 2'},
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-3.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 3'},
- {image:'https://wsrv.nl/?url=https%3A%2F%2Fdavid-marketingimparable.github.io%2Foneononelanding%2Fassets%2Ftestimonial-new-5.webp&w=600&output=webp&q=88&maxage=1y',alt:'Testimonio de cliente 5'}
+ {image:'assets/testimonial-new-1.webp',alt:'Testimonio de cliente 1'},
+ {image:'assets/testimonial-new-2.webp',alt:'Testimonio de cliente 2'},
+ {image:'assets/testimonial-new-3.webp',alt:'Testimonio de cliente 3'},
+ {image:'assets/testimonial-new-5.webp',alt:'Testimonio de cliente 5'}
 ];
 let current=0;
 const img=document.getElementById('testimonial-image'),dots=document.getElementById('testimonial-dots');
