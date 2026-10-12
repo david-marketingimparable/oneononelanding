@@ -209,7 +209,7 @@ img{max-width:100%}
   .hero h1{font-size:clamp(56px,10vw,80px)}
   .hero-sub{font-size:17px}
   .hero-visual{min-height:0;border-radius:0}
-  .hero-visual>img{object-position:65% center}
+  .hero-visual>img{object-position:82% center}
   .hero-proof{max-width:none}
   .proof-logos{justify-content:flex-start;gap:clamp(13px,4vw,32px)}
   .scroll-cue{bottom:8px}
@@ -269,7 +269,7 @@ img{max-width:100%}
   .proof-logos img{max-width:none;height:39px;padding:4px 7px}
   .proof-logos img:nth-child(n){max-width:none}
   .hero-visual{min-height:0;border-radius:0}
-  .hero-visual>img{object-position:65% center}
+  .hero-visual>img{object-position:82% center}
   .scroll-cue{display:none}
   .section-index{font-size:9px;letter-spacing:1.15px}
   .problem{padding:66px 0 72px}
