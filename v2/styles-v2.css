@@ -34,7 +34,8 @@ img{max-width:100%}
 .hero{position:relative;display:flex;align-items:center;min-height:calc(100svh - 78px);padding:44px 0;overflow:hidden;background:#101114;color:#fff}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(38px,6vw,76px);min-height:calc(100svh - 166px)}
 .hero-copy{max-width:790px;padding:18px 0 10px;position:relative;z-index:2}
-.hero-eyebrow{margin:0 0 19px;color:rgba(255,255,255,.9);font-size:13px;font-weight:500;letter-spacing:.01em;line-height:1.45}
+.hero-eyebrow{display:flex;align-items:center;gap:11px;margin:0 0 19px;color:rgba(255,255,255,.9);font-size:13px;font-weight:500;letter-spacing:.01em;line-height:1.45}
+.hero-eyebrow::before{content:"";display:block;width:24px;height:2px;flex:0 0 24px;background:var(--red)}
 .hero h1,.section-heading h2,.diagnostic-intro h2,.why-heading h2,.fit h2,.faq-heading h2,.closing h2{font-family:var(--serif);font-weight:600;letter-spacing:-.045em}
 .hero h1{max-width:700px;margin:0;font-size:clamp(54px,6vw,86px);line-height:.98}
 .hero h1 em,.section-heading h2 em,.problem h2 em,.diagnostic-intro h2 em,.why-heading h2 em,.fit h2 em,.faq-heading h2 em,.closing h2 em{color:var(--red);font-style:normal}
@@ -104,8 +105,9 @@ img{max-width:100%}
 .why{padding:118px 0 125px}
 .why-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(55px,9vw,130px)}
 .why-heading h2,.faq-heading h2{margin:0 0 18px;font-size:clamp(47px,5.6vw,70px);line-height:1.02}
+.why-heading h2 em{white-space:nowrap}
 .why-heading>p,.faq-heading>p{max-width:360px;margin:0;color:#68717d;font-size:15px;line-height:1.7}
-.cambridge-logo{display:block;width:158px;height:85px;object-fit:contain;object-position:left center;margin-top:38px;opacity:.78}
+.cambridge-logo{display:block;width:220px;height:135px;object-fit:contain;object-position:left center;margin-top:38px;opacity:.9}
 .why-list{border-top:1px solid var(--line)}
 .why-list article{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;padding:25px 0;border-bottom:1px solid var(--line)}
 .why-list h3{margin:0 0 6px;font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:-.025em}
@@ -143,7 +145,6 @@ img{max-width:100%}
 .closing-content{position:relative;z-index:1}
 .closing h2{margin:0;font-size:clamp(49px,7vw,88px);line-height:.99}
 .closing h2 em{color:var(--red)}
-.closing-copy{margin:22px 0 28px;color:#c8cbd0;font-size:15px}
 .closing-watermark{position:absolute;right:-2vw;bottom:-47px;color:rgba(255,255,255,.035);font-size:clamp(100px,19vw,280px);font-weight:700;letter-spacing:-.08em;white-space:nowrap;pointer-events:none}
 .footer{padding:25px 0 20px;background:#fff}
 .footer-inner{display:flex;align-items:center;gap:25px;flex-wrap:wrap}
@@ -273,7 +274,7 @@ img{max-width:100%}
   .why-grid,.faq-grid{gap:31px}
   .why-heading h2,.faq-heading h2{margin:0 0 13px;font-size:47px}
   .why-heading>p,.faq-heading>p{font-size:14px}
-  .cambridge-logo{width:130px;height:66px;margin-top:20px}
+  .cambridge-logo{width:180px;height:110px;margin-top:20px}
   .why-list article{grid-template-columns:1fr;gap:12px;padding:18px 0}
   .why-list h3{font-size:18px}
   .why-list p{font-size:12px}
@@ -286,7 +287,6 @@ img{max-width:100%}
   .faq-answer{padding:0 22px 20px 35px;font-size:12px}
   .closing{padding:72px 0 80px}
   .closing h2{font-size:clamp(45px,12vw,62px)}
-  .closing-copy{font-size:13px;line-height:1.5}
   .closing .button{width:100%;padding-inline:14px;font-size:12px}
   .closing-watermark{bottom:-14px;font-size:21vw}
   .footer-inner{gap:14px 18px}
