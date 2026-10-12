@@ -145,6 +145,7 @@ img{max-width:100%}
 .closing-content{position:relative;z-index:1}
 .closing h2{margin:0;font-size:clamp(49px,7vw,88px);line-height:.99}
 .closing h2 em{color:var(--red)}
+.closing .button{margin-top:24px}
 .closing-watermark{position:absolute;right:-2vw;bottom:-47px;color:rgba(255,255,255,.035);font-size:clamp(100px,19vw,280px);font-weight:700;letter-spacing:-.08em;white-space:nowrap;pointer-events:none}
 .footer{padding:25px 0 20px;background:#fff}
 .footer-inner{display:flex;align-items:center;gap:25px;flex-wrap:wrap}
