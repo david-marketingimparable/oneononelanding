@@ -38,8 +38,10 @@ function setWhatsappChatOpen(open) {
   whatsappChat.classList.toggle('is-open', open);
   whatsappChat.setAttribute('aria-hidden', String(!open));
   whatsappChat.inert = !open;
+  whatsappToggle.classList.toggle('is-chat-open', open);
   whatsappToggle.setAttribute('aria-expanded', String(open));
   whatsappToggle.setAttribute('aria-label', open ? 'Minimizar chat de WhatsApp' : 'Abrir chat de WhatsApp');
+  whatsappToggle.querySelector('span').textContent = open ? 'WhatsApp' : 'Agenda tu diagnóstico';
 }
 
 if (whatsappChat && whatsappToggle) {
