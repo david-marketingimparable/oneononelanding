@@ -58,3 +58,74 @@ if (whatsappChat && whatsappToggle) {
     setWhatsappChatOpen(false);
   }));
 }
+
+// Subtle reveal and parallax for page content. Interactive controls and the
+// WhatsApp widget stay still so their behavior remains predictable.
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const motionTargets = document.querySelectorAll([
+  '.hero-copy > *',
+  '.hero-proof',
+  '.proof-logos img',
+  '.problem-flip-shell',
+  '.section-heading',
+  '.outcomes-list article',
+  '.method-step',
+  '.diagnostic-intro > *',
+  '.diagnostic-details',
+  '.testimonial-card',
+  '.why-heading > *',
+  '.why-list article',
+  '.fit-container > h2',
+  '.fit-card',
+  '.faq-heading > *',
+  '.faq-item',
+  '.closing-content > *'
+].join(','));
+
+if (!motionPreference.matches && motionTargets.length) {
+  const visibleMotionTargets = new Set();
+  const motionObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in-view');
+            visibleMotionTargets.add(entry.target);
+          } else {
+            visibleMotionTargets.delete(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' })
+    : null;
+
+  motionTargets.forEach((element) => {
+    const siblings = [...element.parentElement.children].filter((sibling) =>
+      sibling.matches(motionTargets[0]) || sibling.matches('.outcomes-list article, .method-step, .testimonial-card, .why-list article, .fit-card, .faq-item')
+    );
+    const index = siblings.indexOf(element);
+    element.dataset.motion = '';
+    element.style.setProperty('--motion-delay', `${Math.min(Math.max(index, 0) * 55, 220)}ms`);
+    if (motionObserver) motionObserver.observe(element);
+    else element.classList.add('is-in-view');
+  });
+
+  if (motionObserver) document.documentElement.classList.add('motion-ready');
+
+  let motionFrame = 0;
+  const updateParallax = () => {
+    motionFrame = 0;
+    const viewportCenter = window.innerHeight / 2;
+    visibleMotionTargets.forEach((element) => {
+      const bounds = element.getBoundingClientRect();
+      const distance = (bounds.top + bounds.height / 2 - viewportCenter) / window.innerHeight;
+      const limit = window.innerWidth <= 700 ? 2 : 4;
+      const offset = Math.max(-limit, Math.min(limit, distance * -7));
+      element.style.setProperty('--motion-y', `${offset.toFixed(2)}px`);
+    });
+  };
+  const requestParallaxFrame = () => {
+    if (!motionFrame) motionFrame = window.requestAnimationFrame(updateParallax);
+  };
+  window.addEventListener('scroll', requestParallaxFrame, { passive: true });
+  window.addEventListener('resize', requestParallaxFrame, { passive: true });
+  requestParallaxFrame();
+}
