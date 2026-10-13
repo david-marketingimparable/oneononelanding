@@ -160,6 +160,25 @@ img{max-width:100%}
 .floating-cta{position:fixed;right:24px;bottom:22px;z-index:40;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 21px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:#25d366;color:#fff;box-shadow:0 14px 34px rgba(16,17,20,.22);font-size:12px;font-weight:700;transition:transform .2s,background .2s}
 .floating-cta:hover{transform:translateY(-3px);background:#1fbd5b}
 .floating-cta svg{width:19px;height:19px;fill:#fff}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.whatsapp-chat{position:fixed;right:24px;bottom:96px;z-index:45;display:flex;flex-direction:column;width:min(520px,calc(100vw - 48px));height:min(620px,calc(100dvh - 140px));min-height:420px;overflow:hidden;border-radius:25px;background:#f0e6d7;box-shadow:0 24px 70px rgba(17,18,20,.28);opacity:0;visibility:hidden;transform:translateY(14px) scale(.98);transform-origin:bottom right;transition:opacity .22s,transform .22s,visibility .22s}
+.whatsapp-chat.is-open{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.whatsapp-chat-header{display:flex;flex:none;align-items:center;justify-content:flex-end;min-height:72px;padding:0 20px;background:#006b5f;color:#fff}
+.whatsapp-chat-brand{margin-right:auto;color:#fff;font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-.05em}
+.whatsapp-chat-brand em{color:#ed1c24;font-size:.72em;font-style:normal;text-decoration:underline;text-underline-offset:2px}
+.whatsapp-chat-controls{display:flex;align-items:center;gap:18px}
+.whatsapp-chat-controls button{width:28px;height:34px;padding:0;border:0;background:transparent;color:#fff;font:500 32px/1 var(--sans);cursor:pointer}
+.whatsapp-chat-minimize{transform:translateY(-4px)}
+.whatsapp-chat-messages{display:flex;flex:1;flex-direction:column;justify-content:flex-end;gap:12px;overflow:auto;padding:24px 20px;background-color:#f0e6d7;background-image:radial-gradient(circle at 14px 14px,rgba(154,130,101,.06) 2px,transparent 3px);background-size:42px 42px}
+.whatsapp-message{position:relative;width:fit-content;max-width:82%;margin:0;padding:14px 16px 20px;border-radius:5px 20px 20px;background:#fff;color:#17191d;font:400 16px/1.4 var(--sans);box-shadow:0 2px 2px rgba(22,22,22,.08)}
+.whatsapp-message strong{font-weight:700}.whatsapp-message strong span{color:var(--red)}
+.whatsapp-message small{position:absolute;right:13px;bottom:5px;color:#9aa0a8;font:10px/1 var(--sans)}
+.whatsapp-message small::after{content:"9:11 a.m."}
+.whatsapp-chat-compose{display:flex;flex:none;align-items:center;gap:10px;margin:0 14px 14px;padding:9px 9px 9px 16px;border-radius:40px;background:#fff;box-shadow:0 2px 2px rgba(22,22,22,.08)}
+.whatsapp-chat-compose textarea{flex:1;min-width:0;max-height:100px;resize:none;border:0;outline:0;background:transparent;color:#282b30;font:400 16px/1.35 var(--sans)}
+.whatsapp-chat-compose button{display:grid;flex:none;place-items:center;width:52px;height:52px;border:0;border-radius:50%;background:#00a884;color:#fff;cursor:pointer}
+.whatsapp-chat-compose button svg{width:26px;height:26px;fill:currentColor}
+.floating-cta{cursor:pointer}
 @media(max-width:1050px){
   .container{width:min(calc(100% - 64px),var(--max))}
   .hero-grid{grid-template-columns:minmax(0,1fr) minmax(310px,.88fr);gap:38px}
@@ -298,5 +317,12 @@ img{max-width:100%}
   .footer>a:not(.brand){font-size:10px}
   .floating-cta{right:14px;bottom:14px;min-height:48px;padding:0 15px;gap:8px;font-size:11px}
   .floating-cta svg{width:17px;height:17px}
+  .whatsapp-chat{right:12px;bottom:76px;width:calc(100vw - 24px);height:min(500px,calc(100dvh - 105px));min-height:370px;border-radius:22px}
+  .whatsapp-chat-header{min-height:58px;padding:0 16px}
+  .whatsapp-chat-messages{padding:18px 14px;gap:10px}
+  .whatsapp-message{max-width:86%;padding:12px 14px 19px;font-size:14px}
+  .whatsapp-chat-compose{margin:0 10px 10px;padding:8px 8px 8px 14px}
+  .whatsapp-chat-compose textarea{font-size:15px}
+  .whatsapp-chat-compose button{width:46px;height:46px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
