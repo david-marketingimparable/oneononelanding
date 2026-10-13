@@ -25,42 +25,8 @@ if (problemCard && problemFlipButton) {
   });
 }
 
-const whatsappChat = document.querySelector('.whatsapp-chat');
-const whatsappToggle = document.querySelector('.floating-cta');
-const whatsappMinimize = document.querySelector('.whatsapp-chat-minimize');
-const whatsappClose = document.querySelector('.whatsapp-chat-close');
-let whatsappAutoOpen = window.setTimeout(() => setWhatsappChatOpen(true), 5000);
-
-function setWhatsappChatOpen(open) {
-  if (!whatsappChat || !whatsappToggle) return;
-  whatsappChat.classList.toggle('is-open', open);
-  whatsappChat.setAttribute('aria-hidden', String(!open));
-  whatsappChat.inert = !open;
-  whatsappToggle.classList.toggle('is-chat-open', open);
-  whatsappToggle.setAttribute('aria-expanded', String(open));
-  whatsappToggle.setAttribute('aria-label', open ? 'Minimizar chat de WhatsApp' : 'Abrir chat de WhatsApp');
-  whatsappToggle.querySelector('span').textContent = open ? 'WhatsApp' : 'Agenda tu diagnóstico';
-}
-
-if (whatsappChat && whatsappToggle) {
-  const dismissAutoOpen = () => {
-    if (whatsappAutoOpen) {
-      window.clearTimeout(whatsappAutoOpen);
-      whatsappAutoOpen = null;
-    }
-  };
-  whatsappToggle.addEventListener('click', () => {
-    dismissAutoOpen();
-    setWhatsappChatOpen(!whatsappChat.classList.contains('is-open'));
-  });
-  [whatsappMinimize, whatsappClose].forEach((button) => button?.addEventListener('click', () => {
-    dismissAutoOpen();
-    setWhatsappChatOpen(false);
-  }));
-}
-
 // Subtle reveal and parallax for page content. Interactive controls and the
-// WhatsApp widget stay still so their behavior remains predictable.
+// WhatsApp opens directly from its floating link; no popup is injected.
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const motionTargets = document.querySelectorAll([
   '.hero-copy > *',
