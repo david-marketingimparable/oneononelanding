@@ -99,7 +99,7 @@ if (!motionPreference.matches && motionTargets.length) {
 
   motionTargets.forEach((element) => {
     const siblings = [...element.parentElement.children].filter((sibling) =>
-      sibling.matches(motionTargets[0]) || sibling.matches('.outcomes-list article, .method-step, .testimonial-card, .why-list article, .fit-card, .faq-item')
+      sibling.matches('.outcomes-list article, .method-step, .testimonial-card, .why-list article, .fit-card, .faq-item')
     );
     const index = siblings.indexOf(element);
     element.dataset.motion = '';
