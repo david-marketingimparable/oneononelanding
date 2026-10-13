@@ -96,7 +96,7 @@ img{max-width:100%}
 .testimonials-heading{align-items:start}
 .testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px}
 .testimonial-card{display:flex;flex-direction:column;min-height:450px;overflow:hidden;background:#fff;border:1px solid #e8e8e6}
-.testimonial-photo{display:block;width:100%;height:auto;aspect-ratio:1.42;flex:none;object-fit:cover;object-position:center 34%}
+.testimonial-photo{display:block;width:100%;height:clamp(220px,20.3vw,292px)!important;aspect-ratio:auto;flex:none;object-fit:cover;object-position:center 34%}
 .testimonial-photo-carmen{object-position:center 18%}
 .testimonial-content{position:relative;display:flex;flex:1;flex-direction:column;padding:25px 26px 23px}
 .testimonial-content .quote-mark{height:28px;color:var(--red);font-family:var(--serif);font-size:52px;line-height:.8}
@@ -208,7 +208,7 @@ img{max-width:100%}
   .testimonials{padding:84px 0 94px}
   .testimonial-grid{grid-template-columns:1fr;gap:14px;margin-top:32px}
   .testimonial-card{display:flex;min-height:0}
-  .testimonial-photo{aspect-ratio:1.55}
+  .testimonial-photo{height:clamp(260px,58vw,420px)!important}
   .testimonial-content{padding:23px}
   .testimonial-card blockquote{font-size:16px}
   .why-grid,.faq-grid{grid-template-columns:1fr;gap:40px}
@@ -269,7 +269,7 @@ img{max-width:100%}
   .testimonials{padding:70px 0 75px}
   .testimonial-grid{gap:11px;margin-top:30px}
   .testimonial-card{min-height:0}
-  .testimonial-photo{aspect-ratio:1.45}
+  .testimonial-photo{height:clamp(220px,63vw,320px)!important}
   .testimonial-content{padding:17px 15px 16px}
   .testimonial-content .quote-mark{height:22px;font-size:42px}
   .testimonial-card blockquote{margin:5px 0 17px;font-size:14px;line-height:1.45}
