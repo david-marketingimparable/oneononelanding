@@ -195,10 +195,11 @@ img{max-width:100%}
   .client-logos{padding:21px 0 24px}
   .proof-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));justify-items:center;gap:18px 15px}
   .proof-logos img{max-width:none;height:48px}
-  .problem{padding:58px 0 62px}
-  .problem-flip-card{min-height:clamp(430px,110vw,500px)}
+  .problem{padding:38px 0 30px}
+  .problem-flip-card{min-height:clamp(360px,82vw,430px)}
   .problem-flip-face h2,.problem-flip-face p{font-size:clamp(32px,8vw,42px);line-height:1.12}
-  .problem-flip-face{padding:24px}
+  .problem-flip-face{padding:24px 24px 82px}
+  .problem-flip-button{bottom:18px;width:48px;height:48px}
   .outcomes,.why,.faq{padding:86px 0 92px}
   .section-heading{grid-template-columns:1fr;gap:0}
   .section-heading h2{font-size:clamp(44px,8vw,62px)}
@@ -247,10 +248,13 @@ img{max-width:100%}
   .hero-visual{aspect-ratio:1.25}
   .proof-logos{gap:15px 11px}
   .proof-logos img{height:42px}
-  .problem{padding:46px 0 52px}
-  .problem-flip-card{min-height:clamp(410px,110vw,470px)}
+  .problem{padding:24px 0 20px}
+  .problem-flip-card{min-height:clamp(330px,88vw,390px)}
   .problem-flip-face h2,.problem-flip-face p{font-size:clamp(32px,8vw,40px);line-height:1.12}
-  .outcomes,.why,.faq{padding:69px 0 74px}
+  .problem-flip-face{padding:22px 20px 74px}
+  .problem-flip-button{bottom:15px;width:46px;height:46px}
+  .outcomes{padding:40px 0 74px}
+  .why,.faq{padding:69px 0 74px}
   .section-heading{gap:0}
   .section-heading h2{font-size:44px;line-height:1.03}
   .outcomes-list{margin-top:31px}
