@@ -87,9 +87,9 @@ img{max-width:100%}
 .section-heading-center{display:block;text-align:center}
 .section-heading-center h2{font-size:clamp(46px,5.4vw,70px)}
 .method-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:55px}
-.method-step{position:relative;min-height:260px;padding:30px 30px 34px;border:1px solid #e6e5e2;border-radius:4px;background:#fff}
-.method-step h3{max-width:260px;margin:0 0 12px;font-family:var(--serif);font-size:25px;font-weight:600;line-height:1.18;letter-spacing:-.03em}
-.method-step p{max-width:290px;margin:0;color:#68717d;font-size:14px;line-height:1.65}
+.method-step{position:relative;display:flex;min-height:260px;flex-direction:column;align-items:center;justify-content:center;padding:34px;border:1px solid #e6e5e2;border-radius:4px;background:#fff;text-align:center}
+.method-step h3{max-width:290px;margin:0 auto 12px;font-family:var(--serif);font-size:25px;font-weight:600;line-height:1.18;letter-spacing:-.03em}
+.method-step p{max-width:310px;margin:0 auto;color:#68717d;font-size:14px;line-height:1.65}
 .diagnostic{padding:96px 0 110px}
 .diagnostic-panel{display:grid;grid-template-columns:1fr .95fr;overflow:hidden;background:#111317;color:#fff;border-radius:6px}
 .diagnostic-intro{padding:clamp(38px,6vw,78px);background:var(--red)}
