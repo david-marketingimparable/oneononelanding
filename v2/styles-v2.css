@@ -317,6 +317,7 @@ img{max-width:100%}
   .floating-cta svg{width:17px;height:17px}
   .floating-cta.is-chat-open{width:58px;min-height:58px;padding:0;border-radius:50%}
   .floating-cta.is-chat-open span{display:none}
+  .floating-cta.is-chat-open svg{width:28px;height:28px}
   .whatsapp-chat{right:12px;bottom:76px;width:calc(100vw - 24px);height:min(500px,calc(100dvh - 105px));min-height:370px;border-radius:22px}
   .whatsapp-chat-header{min-height:58px;padding:0 16px}
   .whatsapp-chat-messages{padding:18px 14px;gap:10px}
