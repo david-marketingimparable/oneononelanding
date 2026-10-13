@@ -26,3 +26,35 @@ if (problemCard && problemFlipButton) {
     label.textContent = flipped ? 'Volver al primer mensaje' : 'Ver el otro mensaje';
   });
 }
+
+const whatsappChat = document.querySelector('.whatsapp-chat');
+const whatsappToggle = document.querySelector('.floating-cta');
+const whatsappMinimize = document.querySelector('.whatsapp-chat-minimize');
+const whatsappClose = document.querySelector('.whatsapp-chat-close');
+let whatsappAutoOpen = window.setTimeout(() => setWhatsappChatOpen(true), 5000);
+
+function setWhatsappChatOpen(open) {
+  if (!whatsappChat || !whatsappToggle) return;
+  whatsappChat.classList.toggle('is-open', open);
+  whatsappChat.setAttribute('aria-hidden', String(!open));
+  whatsappChat.inert = !open;
+  whatsappToggle.setAttribute('aria-expanded', String(open));
+  whatsappToggle.setAttribute('aria-label', open ? 'Minimizar chat de WhatsApp' : 'Abrir chat de WhatsApp');
+}
+
+if (whatsappChat && whatsappToggle) {
+  const dismissAutoOpen = () => {
+    if (whatsappAutoOpen) {
+      window.clearTimeout(whatsappAutoOpen);
+      whatsappAutoOpen = null;
+    }
+  };
+  whatsappToggle.addEventListener('click', () => {
+    dismissAutoOpen();
+    setWhatsappChatOpen(!whatsappChat.classList.contains('is-open'));
+  });
+  [whatsappMinimize, whatsappClose].forEach((button) => button?.addEventListener('click', () => {
+    dismissAutoOpen();
+    setWhatsappChatOpen(false);
+  }));
+}
