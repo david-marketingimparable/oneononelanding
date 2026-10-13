@@ -248,11 +248,11 @@ img{max-width:100%}
   .hero-visual{aspect-ratio:1.25}
   .proof-logos{gap:15px 11px}
   .proof-logos img{height:42px}
-  .problem{padding:24px 0 20px}
-  .problem-flip-card{min-height:clamp(330px,88vw,390px)}
+  .problem{padding:14px 0 8px}
+  .problem-flip-card{min-height:clamp(260px,70vw,300px)}
   .problem-flip-face h2,.problem-flip-face p{font-size:clamp(32px,8vw,40px);line-height:1.12}
-  .problem-flip-face{padding:22px 20px 74px}
-  .problem-flip-button{bottom:15px;width:46px;height:46px}
+  .problem-flip-face{padding:18px 18px 62px}
+  .problem-flip-button{bottom:8px;width:46px;height:46px}
   .outcomes{padding:40px 0 74px}
   .why,.faq{padding:69px 0 74px}
   .section-heading{gap:0}
