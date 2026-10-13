@@ -1,21 +1,3 @@
-const menuButton = document.querySelector('.menu-toggle');
-const mobileNav = document.querySelector('#mobile-nav');
-
-menuButton?.addEventListener('click', () => {
-  const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!expanded));
-  menuButton.setAttribute('aria-label', expanded ? 'Abrir menú' : 'Cerrar menú');
-  mobileNav.hidden = expanded;
-});
-
-mobileNav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuButton?.setAttribute('aria-expanded', 'false');
-    menuButton?.setAttribute('aria-label', 'Abrir menú');
-    mobileNav.hidden = true;
-  });
-});
-
 // Keep the FAQ focused: only one answer stays open at a time.
 document.querySelectorAll('.faq-item').forEach((item) => {
   item.addEventListener('toggle', () => {
@@ -25,3 +7,22 @@ document.querySelectorAll('.faq-item').forEach((item) => {
     });
   });
 });
+
+const problemCard = document.querySelector('.problem-flip-card');
+const problemFlipButton = document.querySelector('.problem-flip-button');
+
+if (problemCard && problemFlipButton) {
+  const front = problemCard.querySelector('.problem-flip-front');
+  const back = problemCard.querySelector('.problem-flip-back');
+  const label = problemFlipButton.querySelector('span');
+
+  problemFlipButton.addEventListener('click', () => {
+    const flipped = problemCard.classList.toggle('is-flipped');
+    problemFlipButton.setAttribute('aria-pressed', String(flipped));
+    front.setAttribute('aria-hidden', String(flipped));
+    back.setAttribute('aria-hidden', String(!flipped));
+    back.inert = !flipped;
+    front.inert = flipped;
+    label.textContent = flipped ? 'Volver al primer mensaje' : 'Ver el otro mensaje';
+  });
+}
